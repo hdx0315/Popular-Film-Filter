@@ -35,15 +35,9 @@ jobs:
       
     - run: npm test
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy with gh-pages
       run: |
-        git config --global user.email "hirushadinujaya0315@gmail.com"
-        git config --global user.name "hdx0315"
-        git checkout gh-pages || git checkout --orphan gh-pages
-        git rm -rf .
-        cp -r dist/. .
-        git add .
-        git commit -m "Deploying to gh-pages"
-        git push origin gh-pages
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
