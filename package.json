@@ -1,9 +1,9 @@
 {
-  "name": "popular-film-filter",
+  "name": "Popular-Film-Filter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://hdx0315.github.io/popular-film-filter",
+  "homepage": "https://hdx0315.github.io/Popular-Film-Filter",
   "scripts": {
     "deploy": "gh-pages -d build",
     "dev": "vite",
